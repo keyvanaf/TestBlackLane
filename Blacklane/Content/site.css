@@ -1,0 +1,220 @@
+﻿/*Import picker depend on scrren*/
+@import url('picker/classic.css') all and (min-width: 870px);
+@import url('picker/classic.date.css') all and (min-width: 870px);
+@import url('picker/classic.time.css') all and (min-width: 870px);
+
+@import url('picker/default.css') all and (max-width: 869px);
+@import url('picker/default.date.css') all and (max-width: 869px);
+@import url('picker/default.time.css') all and (max-width: 869px);
+
+/*Bootstrap override*/
+.btn {
+    border-radius: 0;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.modal-content {
+    border-radius: 0;
+    color: #000;
+}
+
+
+/*Main CSS*/
+html {
+    letter-spacing: 0.1rem;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    background-color: rgba(0%, 0%, 0%, 0.80);
+    text-decoration-color: #168CCC;
+    -webkit-tap-highlight-color: red;
+    color: #FFF;
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
+    position: relative;
+}
+
+input {
+    color: black;
+}
+
+.body {
+    min-height: 100%;
+    min-width: 320px;
+}
+
+header {
+    height: 48px;
+    height: 3rem;
+    background-color: #1f1f1f;
+}
+
+    header .blacklane-logo {
+        float: left;
+        height: 36px;
+        height: 2.25rem;
+        width: 190px;
+        width: 11.875rem;
+        margin-top: 8px;
+        margin-top: .5rem;
+        background-image: url(svg/logo-blacklane-no-claim.svg);
+        background-size: 100%;
+        display: block;
+        text-indent: 9999px;
+        background-repeat: no-repeat;
+    }
+
+    header .author {
+        
+        line-height: 16px;
+        line-height: 1rem;
+        padding-left: 15px;
+        padding-left: .9375rem;
+        padding-right: 15px;
+        padding-right: .9375rem;
+        display: block;
+        height: 36px;
+        height: 2.25rem;
+        text-align: right;
+        vertical-align: middle;
+        width:100px;
+        float:right;
+    }
+
+main {
+    height: 100%;
+    min-height: 100%;
+    background: url(images/background-home.jpg) no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    padding-top: 48px;
+    padding-top: 3rem;
+    padding-bottom: 1.375rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-transition-type {
+    border-radius: 0;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    height: 3.3125rem;
+    background-color: rgba(0,0,0,.2);
+    float: left;
+    width: 50%;
+}
+
+
+
+.frm-transition-header {
+}
+
+    .frm-transition-header ul {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+        .frm-transition-header ul li {
+            position: relative;
+            display: block;
+        }
+
+            .frm-transition-header ul li.active .btn-transition-type {
+                font-weight: 400;
+                background-color: rgba(0,0,0,.6);
+                color: #168ccc;
+                outline: none;
+            }
+
+.frm-transition {
+    background-color: rgba(0,0,0,.6);
+    padding: 15px;
+    padding: .9375rem;
+}
+
+    .frm-transition legend {
+        font-weight: 300;
+        color: #fff;
+        border: 0;
+    }
+
+    .frm-transition .input {
+        margin-bottom: 1.25rem;
+    }
+
+        .frm-transition .input input {
+            width: 100%;
+            height: 2.13rem;
+            
+        }
+
+            .frm-transition .input input.datepicker {
+                padding-left: 50px;
+                padding-left: 3.125rem;
+                background-size: 39px 37px;
+                background: url(svg/datepicker.svg) no-repeat left center #FFF;
+                background-size: 2.4375rem 2.3125rem;
+                border-width: 0;
+            }
+
+            .frm-transition .input input.timepicker {
+                padding-left: 50px;
+                padding-left: 3.125rem;
+                background-size: 39px 37px;
+                background: url(svg/timepicker.svg) no-repeat left center #FFF;
+                background-size: 2.4375rem 2.3125rem;
+                border-width: 0;
+            }
+        .frm-transition .input.form-group.has-error input {
+            background-color: #FBD8D8;
+        }
+
+        
+        
+        .frm-transition.submit {
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .frm-transition.submit button {
+            width: 50%;
+            
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+@media all and (max-width: 767px) {
+    .frm-transition.submit button {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.placepicker-map {
+    width: 100%;
+    height: 300px;
+}
+
+.frm-transition .active {
+    display: block !important;
+}
+
+/*when pickerlocation show into dialog*/
+.pac-container
+{
+
+    z-index:10000;
+}

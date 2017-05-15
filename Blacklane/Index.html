@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Blacklane - Your Professional Driver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./content/images/favicon-48by48.ico">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600&subset=latin,latin-ext);
+    </style>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/validator.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places">
+    </script>
+
+    <script src="./Scripts/jquery.placepicker.js"></script>
+    <script src="Scripts/pickadate/picker.js"></script>
+    <script src="Scripts/pickadate/picker.date.js"></script>
+    <script src="Scripts/pickadate/picker.time.js"></script>
+
+    <script src="Scripts/App.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+
+
+            App.initValidation();
+
+            App.initForm();
+
+        }); // END document.ready
+    </script>
+</head>
+<body>
+    <noscript>
+        <iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-K88QGD' style='display:none;visibility:hidden' width='0'></iframe>
+    </noscript>
+    <div class="body">
+        <header>
+            <div class="container">
+                <a class="blacklane-logo" href="/en"></a>
+                <span class="author">Kaivan Akhavan Farahani</span>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row frm-transition-header">
+                            <ul>
+                                <li class="active">
+                                    <button class="btn-transition-type" data-toggle="tab" href="#oneWay">One Leg</button>
+                                </li>
+                                <li><button id="dd" class="btn-transition-type" data-toggle="tab" href="#twoWay">Two Leg</button></li>
+                            </ul>
+                        </div>
+                        <form name="booking_request_form" id="new_booking_request" data-toggle="validator" role="form" action="https://www.blacklane.com/en/booking_requests/transfers/new" accept-charset="UTF-8" method="get">
+                            <input name="utf8" type="hidden" value="✓">
+                            <div class="row frm-transition">
+                                <fieldset id="oneWay">
+                                    <div class="row">
+                                        <div class="col-sm-6 input locationpicker form-group">
+                                            <input class="mustCheck form-control" placeholder="From: address, airport, hotel, &hellip;" type="text" name="booking_request[pickup]" title="From" data-map-container-id="dialogMap1" required data-hasaddressstreetnumber="true">
+                                            <div class="help-block with-errors">For Help you can use Google map with click on the Map button (<span class="glyphicon glyphicon-globe"></span>)</div>
+                                        </div>
+                                        <div class="col-sm-6 input locationpicker form-group">
+                                            <input class="mustCheck form-control" placeholder="To: address, airport, hotel, &hellip;" type="text" name="booking_request[dropoff]" title="To" data-map-container-id="dialogMap2" required data-hasaddressstreetnumber="true">
+                                            <div class="help-block with-errors">For Help you can use Google map with click on the Map button (<span class="glyphicon glyphicon-globe"></span>)</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 input form-group">
+                                            <input class="mustCheck datepicker form-control" title="Move Date" id="at_date" type="date" name="at_date" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="col-sm-6 input form-group">
+                                                <input class="mustCheck timepicker form-control" type="time" name="at_time" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="hide" id="twoWay">
+                                    <legend>Return</legend>
+                                    <div class="row">
+                                        <div class="col-sm-6 input locationpicker form-group">
+                                            <input class="mustCheck form-control" placeholder="From: address, airport, hotel, &hellip;" type="text" name="booking_request[return_pickup]" title="Retuen From" data-map-container-id="dialogMap3" required data-hasaddressstreetnumber="true">
+                                            <div class="help-block with-errors">For Help you can use Google map with click on the Map button (<span class="glyphicon glyphicon-globe"></span>)</div>
+                                        </div>
+                                        <div class="col-sm-6 input locationpicker form-group">
+                                            <input class="mustCheck form-control" placeholder="To: address, airport, hotel, &hellip;" type="text" name="booking_request[return_dropoff]" title="Return To" data-map-container-id="dialogMap4" required data-hasaddressstreetnumber="true">
+                                            <div class="help-block with-errors">For Help you can use Google map with click on the Map button (<span class="glyphicon glyphicon-globe"></span>)</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 input form-group">
+                                            <input class="mustCheck datepicker form-control" title="Return Date"  type="date" name="return_at_date" required data-datebigger="#at_date">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="col-sm-6 input form-group">
+                                            <input class="mustCheck timepicker form-control" type="time" name="return_at_time" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="row frm-transition submit">
+
+                                <button class="btn btn-info btn-lg" tabindex="5">Book a ride</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
